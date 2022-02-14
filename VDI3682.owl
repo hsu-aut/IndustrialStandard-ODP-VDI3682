@@ -56,7 +56,7 @@
                 <owl:unionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
                     <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#SystemBorder"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -263,33 +263,6 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#isOnSystemBorder -->
-
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#isOnSystemBorder">
-        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemBorder"/>
-        <rdfs:comment>Objectproperty that is used to assign an In- or Output to be coming from outside of the system boarder.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#isWithinSystemBorder -->
-
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#isWithinSystemBorder">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemBorder"/>
-        <rdfs:comment>ObjectProperty that is used to indicate that a ProcessOperator or a State is within a certain system boarder.</rdfs:comment>
-    </owl:ObjectProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -353,7 +326,7 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
 
     <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Process">
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemBorder"/>
+        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
         <rdfs:comment>A process describes the desired behavior of a process operator, by means of a solution neutral description of inputs and outputs. Products,energies  and information are converted into new products,energies  and information by a process operator. The process operator implements this conversion with the help of technical resources.
 
@@ -380,8 +353,9 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
             </owl:Class>
         </owl:equivalentClass>
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemBorder"/>
+        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
+        <rdfs:comment>One step of a process that transfers a status &quot;before&quot; (i.e., an input) to a status &quot;after&quot; (i.e., an output).</rdfs:comment>
     </owl:Class>
     
 
@@ -397,7 +371,7 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     <!-- http://www.hsu-ifa.de/ontologies/VDI3682#State -->
 
     <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#State">
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemBorder"/>
+        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
         <rdfs:comment>A State describes the actual state of a Product/Energy/Information. Exp.: status ante operationem and status post operationem.
 [VDI3682-1]</rdfs:comment>
@@ -405,11 +379,11 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#SystemBorder -->
+    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit -->
 
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#SystemBorder">
+    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit">
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
-        <rdfs:comment>The system boundary determines the observation horizon of the process. In a broader sense, this can also be seen as the balance limit for incoming products/energy/information and outgoing products/energy/information.
+        <rdfs:comment>The system limit determines the observation horizon of the process. In a broader sense, this can also be seen as the balance limit for incoming products/energy/information and outgoing products/energy/information.
 [VDI 3682-1]</rdfs:comment>
     </owl:Class>
     
@@ -427,46 +401,6 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
         <rdfs:comment>The technical resource is able to implement certain processes and is an abstract description of a system.
 [VDI 3682-1]</rdfs:comment>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#testProcess -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#testProcess"/>
-    
-
-
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#testProcess2 -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#testProcess2"/>
-    
-
-
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#testResource -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#testResource">
-        <isAssignedTo rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#testProcess"/>
-        <isAssignedTo rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#testProcess2"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#testResource2 -->
-
-    <owl:NamedIndividual rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#testResource2">
-        <isAssignedTo rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#testProcess"/>
-    </owl:NamedIndividual>
 </rdf:RDF>
 
 
