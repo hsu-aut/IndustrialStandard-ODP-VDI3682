@@ -60,7 +60,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
-        <rdfs:comment xml:lang="en">Describes containment of process elements within a process</rdfs:comment>
+        <rdfs:comment xml:lang="en">Describes containment of process elements (state, process operator, system limit) within a process</rdfs:comment>
     </owl:ObjectProperty>
     
 
@@ -330,7 +330,7 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
         <rdfs:comment>A process describes the desired behavior of a process operator, by means of a solution neutral description of inputs and outputs. Products,energies  and information are converted into new products,energies  and information by a process operator. The process operator implements this conversion with the help of technical resources.
 
-[VDI3682]</rdfs:comment>
+[VDI3682-1]</rdfs:comment>
     </owl:Class>
     
 
@@ -364,6 +364,8 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
 
     <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Product">
         <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
+        <rdfs:comment>A rather generic concepts to describe all sorts of raw, intermediate or final products. Can also be used to describe flow of materials.
+[VDI 3682-1]</rdfs:comment>
     </owl:Class>
     
 
