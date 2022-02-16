@@ -12,8 +12,8 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#">
     <owl:Ontology rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682">
-        <owl:versionIRI rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682/2.0.0"/>
-        <owl:versionInfo>2.0.0</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682/2.0.1"/>
+        <owl:versionInfo>2.0.1</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -109,16 +109,15 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
 
     <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasInput">
         <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#flow"/>
-        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <rdfs:range>
+        <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Energy"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Information"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Product"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
                 </owl:unionOf>
             </owl:Class>
-        </rdfs:range>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
         <rdfs:comment>ObjectProperty that is used to link a ProcessOperator with an Input, i.e. Energy or Information or Product.</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -128,16 +127,15 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
 
     <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput">
         <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#flow"/>
-        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <rdfs:range>
+        <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Energy"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Information"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Product"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
+                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
                 </owl:unionOf>
             </owl:Class>
-        </rdfs:range>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
         <rdfs:comment>ObjectProperty that is used to link a ProcessOperator with an Output, i.e. Energy or Information or Product.</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -329,8 +327,9 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
         <rdfs:comment>A process describes the desired behavior of a process operator, by means of a solution neutral description of inputs and outputs. Products,energies  and information are converted into new products,energies  and information by a process operator. The process operator implements this conversion with the help of technical resources.
+[VDI3682-1]
 
-[VDI3682-1]</rdfs:comment>
+Note that a process may have inputs and outputs. These are inputs / outputs that are on the system limit of this process.</rdfs:comment>
     </owl:Class>
     
 
@@ -349,13 +348,37 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
                         <owl:onProperty rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput"/>
                         <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
                     </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#consistsOf"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:someValuesFrom rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
+                    </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasInput"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
         <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
-        <rdfs:comment>One step of a process that transfers a status &quot;before&quot; (i.e., an input) to a status &quot;after&quot; (i.e., an output).</rdfs:comment>
+        <rdfs:comment>One step of a process that transfers a status &quot;before&quot; (i.e., an input) to a status &quot;after&quot; (i.e., an output). 
+Everything that has an input and an output may be a process operator (but could also be a process).
+Everything that has an input and an output AND is contained within a process is a process operator.</rdfs:comment>
     </owl:Class>
     
 
