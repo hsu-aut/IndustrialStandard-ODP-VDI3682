@@ -12,8 +12,8 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#">
     <owl:Ontology rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682">
-        <owl:versionIRI rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682/2.0.1"/>
-        <owl:versionInfo>2.0.1</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682/3.0.1"/>
+        <owl:versionInfo>3.0.1</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -417,12 +417,6 @@ Everything that has an input and an output AND is contained within a process is 
     <!-- http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource -->
 
     <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource">
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#isAssignedTo"/>
-                <owl:someValuesFrom rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-            </owl:Restriction>
-        </owl:equivalentClass>
         <rdfs:comment>The technical resource is able to implement certain processes and is an abstract description of a system.
 [VDI 3682-1]</rdfs:comment>
     </owl:Class>
