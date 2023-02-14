@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.hsu-ifa.de/ontologies/VDI3682#"
-     xml:base="http://www.hsu-ifa.de/ontologies/VDI3682"
+<rdf:RDF xmlns="http://www.w3id.org/hsu-aut/VDI3682#"
+     xml:base="http://www.w3id.org/hsu-aut/VDI3682"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -10,10 +10,10 @@
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:VDI3682="http://www.hsu-ifa.de/ontologies/VDI3682#">
-    <owl:Ontology rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682">
-        <owl:versionIRI rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682/3.0.1"/>
-        <owl:versionInfo>3.0.1</owl:versionInfo>
+     xmlns:VDI3682="http://www.w3id.org/hsu-aut/VDI3682#">
+    <owl:Ontology rdf:about="http://www.w3id.org/hsu-aut/VDI3682">
+        <owl:versionIRI rdf:resource="http://www.w3id.org/hsu-aut/VDI3682/4.0.0"/>
+        <owl:versionInfo>4.0.0</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -46,17 +46,17 @@
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#consistsOf -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#consistsOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#consistsOf">
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#consistsOf">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
+        <rdfs:domain rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#Process"/>
         <rdfs:range>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#State"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#SystemLimit"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:range>
@@ -65,11 +65,11 @@
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#dependency -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#dependency -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#dependency">
-        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#dependency">
+        <rdfs:domain rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
         <rdfs:comment xml:lang="en">This ObjectProperty is not explicitly contained within the VDI 3682. It is used to describe dependencies of In- and Outputs. Due to open world assumption (OWA) the case that more than one In- or Outputs occur does always mean an alternative Input. For the case, that In- and Outputs are depending on each other, the ObjectProperty Dependency can be used. It can be interpreted as an &quot;AND&quot; constructor between In- and/or Outputs of a process.
 
 E.g.: A process has two Inputs. If they are alternatives, then this fact must not  be explcitly modelled. If both Inputs have to go into the process, then the &quot;Dependency&quot; ObjectProperty is assigned between them.
@@ -81,93 +81,93 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#flow -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#flow -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#flow">
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#flow">
         <rdfs:comment>most generic concept for flows taken from VDI3682 and refined by semantics that is used in graphical notation</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#hasAlternativeInput -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#hasAlternativeInput -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasAlternativeInput">
-        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasInput"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasAlternativeInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasInput"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#hasAlternativeOutput -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#hasAlternativeOutput -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasAlternativeOutput">
-        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasAlternativeOutput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasOutput"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#hasInput -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#hasInput -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasInput">
-        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#flow"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#flow"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Process"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
         <rdfs:comment>ObjectProperty that is used to link a ProcessOperator with an Input, i.e. Energy or Information or Product.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#hasOutput -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput">
-        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#flow"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasOutput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#flow"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Process"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
         <rdfs:comment>ObjectProperty that is used to link a ProcessOperator with an Output, i.e. Energy or Information or Product.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#hasParallelInput -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#hasParallelInput -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasParallelInput">
-        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasInput"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasParallelInput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasInput"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#hasParallelOutput -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#hasParallelOutput -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasParallelOutput">
-        <rdfs:subPropertyOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasParallelOutput">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasOutput"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#hasPredecessor -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#hasPredecessor -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasPredecessor">
-        <owl:inverseOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasSuccessor"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasPredecessor">
+        <owl:inverseOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasSuccessor"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
+        <rdfs:domain rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasInput"/>
+            <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasInput"/>
             <rdf:Description>
-                <owl:inverseOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput"/>
+                <owl:inverseOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasOutput"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
         <rdfs:comment>an object property that is used to infer a predecessing relationship between entities</rdfs:comment>
@@ -175,23 +175,23 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#hasSubProcess -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#hasSubProcess -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasSubProcess">
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasSubProcess">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Process"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#Process"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#isComposedOf"/>
+            <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#isComposedOf"/>
             <rdf:Description>
-                <owl:inverseOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#consistsOf"/>
+                <owl:inverseOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#consistsOf"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
         <rdfs:comment>Is used to find the complete decomposed process of a process operatore. Note: This is syntactic sugar as a subprocess can be found by following &quot;isComposedOf&quot; and the inverse of &quot;consistsOf&quot;.</rdfs:comment>
@@ -199,16 +199,16 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#hasSuccessor -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#hasSuccessor -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasSuccessor">
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasSuccessor">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
+        <rdfs:domain rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput"/>
+            <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasOutput"/>
             <rdf:Description>
-                <owl:inverseOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasInput"/>
+                <owl:inverseOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasInput"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
         <rdfs:comment>an object property that is used to infer a successing relationshipt between entities</rdfs:comment>
@@ -216,24 +216,24 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#hasUpperProcess -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#hasUpperProcess -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#hasUpperProcess">
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#hasUpperProcess">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
-                    <rdf:Description rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Process"/>
+                    <rdf:Description rdf:about="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#Process"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description>
-                <owl:inverseOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#isComposedOf"/>
+                <owl:inverseOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#isComposedOf"/>
             </rdf:Description>
             <rdf:Description>
-                <owl:inverseOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#consistsOf"/>
+                <owl:inverseOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#consistsOf"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
         <rdfs:comment>Is used to find the parent (upper) process of a lower level process operator. Note: This is syntactic sugar as a parent process can be found by following the inverse of &quot;isComposedOf&quot; and the inverse of &quot;consistsOf&quot;.</rdfs:comment>
@@ -241,21 +241,21 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#isAssignedTo -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#isAssignedTo -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#isAssignedTo">
-        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#isAssignedTo">
+        <rdfs:domain rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#TechnicalResource"/>
         <rdfs:comment>ObjectProperty that is used to indicate that a process operator is performed by a technical resource.</rdfs:comment>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#isComposedOf -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#isComposedOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#isComposedOf">
-        <rdfs:domain rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
-        <rdfs:range rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator"/>
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#isComposedOf">
+        <rdfs:domain rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
         <rdfs:comment>Used for decomposition. A process operator can be composed of multiple more detailed process operators.</rdfs:comment>
     </owl:ObjectProperty>
     
@@ -272,18 +272,18 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#longName -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#longName -->
 
-    <owl:DatatypeProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#longName">
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#longName">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:comment>A property that is used to give a long name to an individual.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#shortName -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#shortName -->
 
-    <owl:DatatypeProperty rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#shortName">
+    <owl:DatatypeProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#shortName">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:comment>A property that is used to give a short name to an individual.</rdfs:comment>
     </owl:DatatypeProperty>
@@ -301,31 +301,31 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#Energy -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#Energy -->
 
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Energy">
-        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Energy">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
         <rdfs:comment>Energy is requiered by the process operator to fullfill the process. Energy is Input and Output of a process. Energy can be any kind of energy, exp.: electricity, heat,...</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#Information -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#Information -->
 
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Information">
-        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Information">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
         <rdfs:comment>Information input for a process operator can be any kind of information required to fullfill the process. Information output can be any kind of information created by the process.
 [VDI 3682-1]</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#Process -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#Process -->
 
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Process">
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Process">
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#SystemLimit"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#TechnicalResource"/>
         <rdfs:comment>A process describes the desired behavior of a process operator, by means of a solution neutral description of inputs and outputs. Products,energies  and information are converted into new products,energies  and information by a process operator. The process operator implements this conversion with the help of technical resources.
 [VDI3682-1]
 
@@ -334,27 +334,27 @@ Note that a process may have inputs and outputs. These are inputs / outputs that
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator -->
 
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#ProcessOperator">
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasInput"/>
+                        <owl:onProperty rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasInput"/>
                         <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput"/>
+                        <owl:onProperty rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasOutput"/>
                         <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty>
                             <rdf:Description>
-                                <owl:inverseOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#consistsOf"/>
+                                <owl:inverseOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#consistsOf"/>
                             </rdf:Description>
                         </owl:onProperty>
-                        <owl:someValuesFrom rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#Process"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#Process"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -363,19 +363,19 @@ Note that a process may have inputs and outputs. These are inputs / outputs that
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasInput"/>
+                        <owl:onProperty rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasInput"/>
                         <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
                     </owl:Restriction>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#hasOutput"/>
+                        <owl:onProperty rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#hasOutput"/>
                         <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#SystemLimit"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#TechnicalResource"/>
         <rdfs:comment>One step of a process that transfers a status &quot;before&quot; (i.e., an input) to a status &quot;after&quot; (i.e., an output). 
 Everything that has an input and an output may be a process operator (but could also be a process).
 Everything that has an input and an output AND is contained within a process is a process operator.</rdfs:comment>
@@ -383,40 +383,40 @@ Everything that has an input and an output AND is contained within a process is 
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#Product -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#Product -->
 
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#Product">
-        <rdfs:subClassOf rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#State"/>
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Product">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
         <rdfs:comment>A rather generic concepts to describe all sorts of raw, intermediate or final products. Can also be used to describe flow of materials.
 [VDI 3682-1]</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#State -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#State -->
 
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#State">
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit"/>
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#State">
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#SystemLimit"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#TechnicalResource"/>
         <rdfs:comment>A State describes the actual state of a Product/Energy/Information. Exp.: status ante operationem and status post operationem.
 [VDI3682-1]</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#SystemLimit -->
 
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#SystemLimit">
-        <owl:disjointWith rdf:resource="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource"/>
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#SystemLimit">
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#TechnicalResource"/>
         <rdfs:comment>The system limit determines the observation horizon of the process. In a broader sense, this can also be seen as the balance limit for incoming products/energy/information and outgoing products/energy/information.
 [VDI 3682-1]</rdfs:comment>
     </owl:Class>
     
 
 
-    <!-- http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource -->
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#TechnicalResource -->
 
-    <owl:Class rdf:about="http://www.hsu-ifa.de/ontologies/VDI3682#TechnicalResource">
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#TechnicalResource">
         <rdfs:comment>The technical resource is able to implement certain processes and is an abstract description of a system.
 [VDI 3682-1]</rdfs:comment>
     </owl:Class>
