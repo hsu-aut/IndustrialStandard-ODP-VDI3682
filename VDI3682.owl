@@ -12,8 +12,8 @@
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:VDI3682="http://www.w3id.org/hsu-aut/VDI3682#">
     <owl:Ontology rdf:about="http://www.w3id.org/hsu-aut/VDI3682">
-        <owl:versionIRI rdf:resource="http://www.w3id.org/hsu-aut/VDI3682/4.0.0"/>
-        <owl:versionInfo>4.0.0</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://www.w3id.org/hsu-aut/VDI3682/4.0.1"/>
+        <owl:versionInfo>4.0.1</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -251,12 +251,28 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#isCharacterizedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#isCharacterizedBy">
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#Characteristic"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.w3id.org/hsu-aut/VDI3682#isComposedOf -->
 
     <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#isComposedOf">
         <rdfs:domain rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
         <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
         <rdfs:comment>Used for decomposition. A process operator can be composed of multiple more detailed process operators.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#isIdentifiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3id.org/hsu-aut/VDI3682#isIdentifiedBy">
+        <rdfs:range rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#Identification"/>
     </owl:ObjectProperty>
     
 
@@ -301,11 +317,40 @@ Furthermore, the Operator can be used to express dependencies between In- and Ou
     
 
 
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#Attribute -->
+
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Attribute">
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#Process"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#ProcessOperator"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#SystemLimit"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#TechnicalResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#Characteristic -->
+
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Characteristic">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#Attribute"/>
+        <owl:disjointWith rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#Identification"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.w3id.org/hsu-aut/VDI3682#Energy -->
 
     <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Energy">
         <rdfs:subClassOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#State"/>
         <rdfs:comment>Energy is requiered by the process operator to fullfill the process. Energy is Input and Output of a process. Energy can be any kind of energy, exp.: electricity, heat,...</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3id.org/hsu-aut/VDI3682#Identification -->
+
+    <owl:Class rdf:about="http://www.w3id.org/hsu-aut/VDI3682#Identification">
+        <rdfs:subClassOf rdf:resource="http://www.w3id.org/hsu-aut/VDI3682#Attribute"/>
     </owl:Class>
     
 
