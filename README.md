@@ -67,13 +67,13 @@ Exemplary Competency Questions that could be answered with this ODP:<br></br>
 
 
 ## Usage
-If you want to use this ontology design pattern, the easiest way is to directly import it into your ontology via `owl:imports` statements. Make sure to reference a fixed release version so that you can't get surprised by future changes. To do so, click on the branch selection right below the number of commits and select a tag from the dropdown, e.g. v2.0.1. Then navigate to the .owl-file and open the raw file. For this example it would be https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-VDI3682/v2.0.1/VDI3682.owl. You can use this URL in an `owl:imports` statement of your ontology. If you're having trouble using this URL in a tool like Protégé, try opening your ontology with a text editor and simply inserting your imports manually.
+If you want to use this ontology design pattern, the easiest way is to directly import it into your ontology via `owl:imports` statements using the W3ID identifier. Make sure to reference a fixed release version so that you can't get surprised by future changes. For version 4.0.1, this would be `https://w3id.org/hsu-aut/VDI3682/4.0.1`. You can use this URL in an `owl:imports` statement of your ontology. If you're having trouble using this URL in a tool like Protégé, try opening your ontology with a text editor and simply inserting your imports manually.
 An example of an imports section looks like this:
 
 ```xml
 <owl:Ontology rdf:about="http://www.hsu-ifa.de/ontologies/capability-model#">
     <owl:versionIRI rdf:resource="http://www.hsu-ifa.de/ontologies/capability-model/1.0.0#"/>
-    <owl:imports rdf:resource="https://raw.githubusercontent.com/hsu-aut/IndustrialStandard-ODP-VDI3682/v2.0.1/VDI3682.owl"/>
+    <owl:imports rdf:resource="https://w3id.org/hsu-aut/VDI3682/4.0.1"/>
 </owl:Ontology>
 ```
 Of course you can also clone or download this repository and import an ODP from a local copy. The advantage of the first approach is that tools like Protégé or TopBraid Composer will directly use the ontologies from the internet and you can simply increase the version number in case you want to use a newer version of our ODPs.
@@ -88,6 +88,6 @@ For more information, see https://github.com/hsu-aut/lion.
 
 ## Further reading:
 - C. Hildebrandt, A. Köcher, C. Kustner, C.-M. Lopez-Enriquez, A.W. Muller, B. Caesar, C.S. Gundlach, A. Fay: _Ontology Building for Cyber-Physical Systems: Application in the Manufacturing Domain_. IEEE Transactions on Automation Science and Engineering, 2020, S. 1–17.
--  C. Hildebrandt, S. Törsleff, T. Bandyszak, B. Caesar, A. Ludewig, A. Fay: _Ontology Engineering for Collaborative Embedded Systems – Requirements and Initial Approach_. In: Schäfer, Karagiannis (Hrsg.): Fachtagung Modellierung, 2018.
+- C. Hildebrandt, S. Törsleff, T. Bandyszak, B. Caesar, A. Ludewig, A. Fay: _Ontology Engineering for Collaborative Embedded Systems – Requirements and Initial Approach_. In: Schäfer, Karagiannis (Hrsg.): Fachtagung Modellierung, 2018.
 - C. Hildebrandt, S. Törsleff, B. Caesar, A. Fay: _Ontology Building for Cyber-Physical Systems: A domain expert centric approach_. In: 2018 14th IEEE Conference on Automation Science and Engineering (CASE 2018), 2018.
 - C. Hildebrandt, A. Scholz, A. Fay, T. Schröder, T. Hadlich, C. Diedrich, M. Dubovy, C. Eck, R. Wiegand: _Semantic Modeling for Collaboration and Cooperation of Systems in the production domain_. In: 22nd IEEE Emerging Technology and Factory Automation (ETFA), 2017.
